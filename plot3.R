@@ -20,6 +20,6 @@ NEI.Baltimore.emmissions.by.type.year <- aggregate(NEI.Baltimore$Emissions, by=l
 names(NEI.Baltimore.emmissions.by.type.year) <- c("type", "year", "total_emissions")
 
 # Plot data and write to file
-png(filename="plot3.png", width=640, height=480)
+png(filename="plot3.png", width=1024, height=480)
 print(qplot(data=NEI.Baltimore.emmissions.by.type.year, x=year, y=total_emissions, facets=. ~ type, ylab="PM2.5 emissions (tons)", main="Yearly PM2.5 emissions by type in Baltimore, MD") + geom_smooth(method="lm"))
 dev.off()
